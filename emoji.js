@@ -6,18 +6,6 @@
         .text();
 }
 
-function readCharDictionary(callback) {
-    var request = new XMLHttpRequest();
-	var path = "chardict.json"
-	var url = chrome.extension.getURL(path);
-	request.open('GET', url);
-	request.onload = function(e) {
-		var chars = JSON.parse(request.responseText);
-		callback(chars);
-	}
-	request.send(null);
-}
-
 function filter_nodes(nodes, regexp) {
     return $(nodes).find('[contenteditable!="true"][contenteditable!="plaintext-only"]').filter(
         function(index) {
@@ -43,13 +31,6 @@ function on_mutation(mutations) {
             run(nodes);
         }
     }
-}
-
-function get_replacement(image) {
-    var relative = "images/" + image;
-    var absolute = chrome.extension.getURL(relative);
-    var element = "<img src='" + absolute + "' class='emoji'>";
-    return element;
 }
 
 function run(nodes) {

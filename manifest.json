@@ -16,11 +16,15 @@
     {
       "matches": ["<all_urls>"],
 	  "css": ["emoji.css"],
-      "js": ["jquery-1.9.1.min.js", "emoji.js"]
+      "js": ["jquery-1.9.1.min.js", "chromoji-core.js", "emoji.js"]
     }
   ],
   "web_accessible_resources": [
     "images/*.png",
     "chardict.json"
-  ]
+  ],
+  "browser_action": {
+    "default_icon": "icon48.png",
+    "default_popup": "popup.html"
+  }
 }
