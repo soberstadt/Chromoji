@@ -5,7 +5,7 @@ function showEmojies() {
       items = chars.items;
       for(var key in items) {
         var item = items[key]
-        var elem = $(get_replacement(item.image))
+        var elem = $(get_replacement(item))
         elem.attr('width', 20)
         elem.attr('height', 20)
         elem.attr('id', key)
